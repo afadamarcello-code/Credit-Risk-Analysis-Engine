@@ -3,9 +3,21 @@ import pandas as pd
 import joblib
 import json
 
-# 1. Load the AI Brain and the Columns
-xgb = joblib.load('xgb_credit_model.pkl')
-with open('model_columns.json', 'r') as f:
+import streamlit as st
+import pandas as pd
+import joblib
+import json
+import os
+
+# 🚀 INSTRUCTOR UPGRADE: Bulletproof Pathing!
+# This tells Python: "Find the folder where this app.py file lives, and look for the .pkl file there."
+base_dir = os.path.dirname(os.path.abspath(__file__))
+model_path = os.path.join(base_dir, 'xgb_credit_model.pkl')
+columns_path = os.path.join(base_dir, 'model_columns.json')
+
+# 1. Load the AI Brain and the Columns using the new paths
+xgb = joblib.load(model_path)
+with open(columns_path, 'r') as f:
     model_columns = json.load(f)
 
 # 2. Set up the Web App Design
