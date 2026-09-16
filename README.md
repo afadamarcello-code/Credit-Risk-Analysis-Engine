@@ -36,3 +36,10 @@ credit-risk-expected-loss-engine/
 │
 ├── Risk_Analysis_Dashboard.pbix      # Interactive Power BI Dashboard
 └── README.md                         # Project Documentation
+
+
+### Power BI Risk Dashboard
+![Power BI Risk Analysis Dashboard](03_PowerBI_Dashboard/powerbi.png)
+
+### Streamlit Web Application
+![Streamlit Credit Risk AI Engine](03_PowerBI_Dashboard/streamlit_app.png)
