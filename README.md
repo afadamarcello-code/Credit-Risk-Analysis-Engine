@@ -1,21 +1,38 @@
-🏦 Credit Risk Analysis & Expected Loss Prediction Engine
-📌 Project Overview
-An end-to-end Data Science and Machine Learning project that predicts the Probability of Default (PD) for loan applicants, calculates the bank's Expected Loss (EL), and deploys the model as a live web application.
+# 🏦 Credit Risk Analysis & Expected Loss Prediction Engine
 
-🛠️ Tech Stack
-Database: PostgreSQL / pgAdmin (Data Cleaning & Feature Engineering)
-Machine Learning: Python, Pandas, Scikit-Learn, XGBoost
-Business Intelligence: Power BI, DAX (Dynamic What-If Parameters)
-Deployment: Streamlit (Web App)
-🧠 The Math (The Expected Loss Formula)
-The core business logic revolves around the standard banking formula:Expected Loss (EL) = Exposure at Default (EAD) × Probability of Default (PD) × Loss Given Default (LGD)
+[![Streamlit App](https://img.shields.io/badge/Streamlit-Live_Web_App-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://share.streamlit.io/)
+[![Power BI Dashboard](https://img.shields.io/badge/Power_BI-Interactive_Report-F2C94C?style=for-the-badge&logo=powerbi&logoColor=black)](#-dashboard-preview)
 
-🚀 Key Features & Upgrades
-SQL Feature Engineering: Handled missing values, capped outliers (e.g., 144-year-olds), and engineered loan_to_income_pct.
-Prevented Data Leakage: Dropped post-outcome variables (EAD, LGD) before training the ML model to ensure real-world viability.
-XGBoost AI Brain: Achieved 92.5% Accuracy and 78% Recall on defaults using scale_pos_weight to handle imbalanced data.
-Dynamic Power BI Dashboard: Built a "What-If" parameter slider allowing users to adjust the Loss Given Default (LGD) assumption and watch the Expected Loss recalculate instantly. Includes a Risk Heatmap and Danger Zone Scatter Plot.
-Live Web App: Deployed the model using Streamlit so bank tellers can input applicant details and get an instant risk score.
-📊 Dashboard Preview
+## 📌 Project Overview
+This project models an enterprise-level Credit Risk & Expected Loss Prediction pipeline. It transforms raw loan applicant data using PostgreSQL, trains a machine learning classification engine (XGBoost) to predict Probability of Default (PD), calculates total Expected Loss (EL), and deploys the solution via an interactive Power BI executive dashboard and a live Streamlit web application.
 
-![Dashboard Preview](D:\projects\risk\03_PowerBI_Dashboard\powerbi.png)
+The goal is to provide commercial banks and credit analysts with real-time risk scoring, automated applicant decisioning, and dynamic stress-testing capabilities.
+
+---
+
+## 🗂️ Project Repository Structure
+
+```text
+credit-risk-expected-loss-engine/
+│
+├── data/                             # Raw & processed financial datasets
+│   ├── raw_loan_data.csv
+│   ├── cleaned_loan_data.csv
+│   └── predicted_risk_scores.csv     # Model output with PD predictions
+│
+├── sql_scripts/                      # PostgreSQL Cleaning & Feature Engineering
+│   ├── 01_data_cleaning.sql
+│   ├── 02_outlier_capping.sql
+│   └── 03_feature_engineering.sql
+│
+├── python/                           # Machine Learning & Pipeline Scripts
+│   ├── 01_data_preprocessing.py
+│   ├── 02_train_xgboost_model.py
+│   └── app.py                        # Streamlit Web Application
+│
+├── docs/                             # Documentation & Visual Assets
+│   └── screenshots/
+│       └── powerbi.png
+│
+├── Risk_Analysis_Dashboard.pbix      # Interactive Power BI Dashboard
+└── README.md                         # Project Documentation
